@@ -1,0 +1,8 @@
+"root":
+  "/" : "func1"
+
+application:
+  "/": "func2"
+  sous_application:
+    "/": "func3"
+    "/dada": "func4"

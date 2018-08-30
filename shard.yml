@@ -1,0 +1,17 @@
+name: test1
+version: 0.1.0
+
+authors:
+  - your-name-here <your-email-here>
+
+targets:
+  test1:
+    main: src/test1.cr
+
+crystal: 0.26.0
+
+license: MIT
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
