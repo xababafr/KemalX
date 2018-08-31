@@ -1,8 +1,9 @@
 "root":
-  "/" : "func1"
+  "/" : "root"
 
-application:
-  "/": "func2"
-  sous_application:
-    "/": "func3"
-    "/dada": "func4"
+blog:
+  "/": "root"
+  posts:
+    "/": "posts_list"
+    "/list/": "posts_list"
+    "/add/": "posts_add"
