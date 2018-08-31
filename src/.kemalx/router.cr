@@ -38,7 +38,7 @@ module KemalX
 
     def add_route(url, func)
       url = url.gsub "/root", ""
-      mc = url.split('/')[1]
+      mc = url.split('/')[1].split(':')[0]
       if mc == ""
         mc = "root"
       end
@@ -49,8 +49,9 @@ module KemalX
 
     def routing_instructions(url, controller, func)
       %|
-get "#{url}" do
-  #{controller}Controller.#{func}
+get "#{url}" do \|env\|
+  c = #{controller}Controller.new
+  c.#{func} env
 end
 |
     end

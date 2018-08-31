@@ -1,14 +1,14 @@
 class BlogController < KemalX::Controller
 
-  def self.root
+  def root(env)
     "I am func2()"
   end
 
-  def self.posts_list
+  def posts_list(env)
     "I am func3()"
   end
 
-  def self.posts_add
+  def posts_add(env)
     "I am func4()"
   end
 

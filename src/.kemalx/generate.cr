@@ -17,8 +17,8 @@ require "./controller"
 
 router.controllers.each do |mc_name|
   requires = %|
-require "../models/#{mc_name.capitalize}Model"
-require "../controllers/#{mc_name.capitalize}Controller"
+require "../models/#{mc_name}_model"
+require "../controllers/#{mc_name}_controller"
 |
   to_exec += requires
 end

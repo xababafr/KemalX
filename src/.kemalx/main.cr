@@ -3,30 +3,35 @@ require "kemal"
 require "./model"
 require "./controller"
 
-require "../models/RootModel"
-require "../controllers/RootController"
+require "../models/root_model"
+require "../controllers/root_controller"
 
-require "../models/BlogModel"
-require "../controllers/BlogController"
+require "../models/blog_model"
+require "../controllers/blog_controller"
 
-get "/" do
-  RootController.root
+get "/:name" do |env|
+  c = RootController.new
+  c.root env
 end
 
-get "/blog/" do
-  BlogController.root
+get "/blog/" do |env|
+  c = BlogController.new
+  c.root env
 end
 
-get "/blog/posts/" do
-  BlogController.posts_list
+get "/blog/posts/" do |env|
+  c = BlogController.new
+  c.posts_list env
 end
 
-get "/blog/posts/list/" do
-  BlogController.posts_list
+get "/blog/posts/list/" do |env|
+  c = BlogController.new
+  c.posts_list env
 end
 
-get "/blog/posts/add/" do
-  BlogController.posts_add
+get "/blog/posts/add/" do |env|
+  c = BlogController.new
+  c.posts_add env
 end
 
 Kemal.run
